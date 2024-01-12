@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+    <title>Login Admin</title>
+    <link rel="stylesheet" href="/style/dasboarplgn.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        ul li a {
+            color: rgb(224, 224, 224);
+        }
+
+        /* styles.css */
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+  height: 100vh;
+        transform-origin: center center;
+        transform: scale(1);
+        overflow: hidden;
+}
+
+#nav{
+
+background-color: rgb(61, 57, 57);
+}
+.navbar-light {
+  background-color: #4CAF50;
+}
+.navbar-toggler div {
+  width: 30vh;
+  height: 3vh;
+  background-color: #ffffff; /* Ganti warna sesuai keinginan Anda */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Gaya untuk animasi toggler ketika di-hover */
+.navbar-toggler:hover div {
+  background-color: #ff8000; /* Ganti warna sesuai keinginan Anda */
+}
+
+  .navbar-brand {
+   /* Membuat elemen <a> menjadi blok untuk bisa menampilkan background-image */
+    width: 250px; /* Sesuaikan lebar dengan kebutuhan */
+    height: 50px; /* Sesuaikan tinggi dengan kebutuhan */
+    background-image: url('/fashion'); /* Ganti dengan path atau URL gambar Anda */
+    background-size: cover; /* Atur tata letak gambar */
+    background-position: center;
+   
+  }
+  .isi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2a2a2a;
+    margin: 0 auto;
+  }
+
+.navbar-nav{
+
+  margin: 0;
+  padding: 0;
+}
+.nav-item{
+  color: rgb(255, 106, 0);
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #ff9100;
+}
+.navbar-toggler1{
+ background-color: rgba(0, 0, 0, 0);
+ box-shadow: none;
+}
+/* styles.css */
+.navbar-toggler1 .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-toggler1 .navbar-toggler div {
+  width: 30px;
+  height: 3px;
+  background-color: #ff5500; /* Ganti warna sesuai keinginan */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#color{
+  color: #ff5500;
+}
+.collapse{
+  position: absolute;
+  /* atau */
+
+  overflow: hidden;
+  background-color: #2a2a2a;
+  width: 50vw;
+
+  height: 100vh;
+} 
+
+    </style>
+</head>
+
+<body>
+
+<nav id="nav" class="navbar ">
+    <button class="navbar-toggler1" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </span>
+    </button>
+    <div class="navbar-brand" href="#"></div>
+   
+</nav>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul id="color" class="navbar-nav ml-auto">
+        <li  class="nav-item active">
+            <a class="nav-link" href="dashboard-admin">Home</a>
+        </li>
+        <li  class="nav-item active">
+            <a style="color: orange;" class="nav-link" href="orders-admin">Pesanan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="home-admin">Barang</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" href="admin-Pelanggan">Pelanggan</a>
+        </li>
+        <li class="nav-item">
+          <a   class="nav-link" href="admin/login">Logout</a>
+      </li>
+    </ul>
+</div>
+
+    <div class="container">
+
+        <!-- Display Order List -->
+        <h4 class="mt-4">Data Pemesanan</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Order Number</th>
+                    <th>Total Amount</th>
+                    <th>Sales ID</th>
+                    <th>Product Name</th>
+                    <th>Customer ID</th>
+                    <th>Status Pesanan</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="ordersListBody"></tbody>
+        </table>
+    </div>
+
+    
+    <!-- !-- Edit order Modal -->
+<div class="modal" id="editOrderModal" tabindex="-1" role="dialog" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="editOrderModalLabel">Edit Pemesanan</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form id="editForm">
+                  <input type="hidden" id="editId">
+                  <div class="form-group">
+                      <label for="editStatusOrders">Status Pemesanan:</label>
+                      <!-- <input type="text" class="form-control" id="editStatusOrders" required> -->
+                      <select class="form-control" id="editStatusOrders" required>
+                        <option value="Diproses">Diproses</option>
+                        <option value="Dikemas">Dikemas</option>
+                        <option value="Dalam Perjalanan">Dalam Perjalanan</option>
+                        <option value="Diterima">Diterima</option>
+                        <option value="Diterima">Dibatalkan</option>
+                    </select>
+                  </div>
+              
+                  <button type="button" class="btn btn-primary" onclick="updateOrder()">Update Status</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <!-- Bootstrap JS and your custom scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    
+        // Function to fetch and display the list of Order
+        function fetchOrdersList() {
+        fetch('/orders') // Assuming this endpoint returns the list of Orders with Barang information
+            .then(response => response.json())
+            .then(orderList => {
+                // Clear the existing table content
+                document.getElementById('ordersListBody').innerHTML = '';
+
+                // Loop through the Orders list and append rows to the table
+                orderList.forEach(order => {
+                    const row = `
+                        <tr>
+                            <td>${order.id}</td>
+                            <td>${order.orderNumber}</td>
+                            <td>${order.totalAmount}</td>
+                            <td>${order.salesId}</td>
+                            <td>${order.salesItem ? order.salesItem.productName : ''}</td>
+                            <td>${order.idPelanggan}</td>
+                            <td>${order.statusOrders}</td>
+                            <td>
+                                <!-- Add edit and delete buttons with appropriate onclick actions -->
+                                <button class="btn btn-warning" onclick="editOrder(${order.id})">Edit</button>
+                            </td>
+                        </tr>
+                    `;
+                    document.getElementById('ordersListBody').innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Error fetching Orders list:', error));
+    }
+
+    // Fetch the initial list of Orders when the page loads
+    fetchOrdersList();
+
+
+    // Function to update a Barang by ID
+    function editOrder(id) {
+         // Fetch the details of the selected Barang by ID
+    fetch(`/orders/${id}`)
+        .then(response => response.json())
+        .then(order => {
+            // Populate the edit form with the details of the selected Barang
+            document.getElementById('editId').value = order.id;
+            document.getElementById('editStatusOrders').value = order.statusOrders;
+
+            // alert("Yakin ingin mengubah?") 
+            // Open the edit modal
+            $('#editOrderModal').modal('show');
+            
+        })
+        .catch(error => console.error('Error fetching Barang details:', error));
+    }
+
+    // Function to update a Barang by ID
+async function updateOrder() {
+    // Fetch data from the edit form
+    const id = document.getElementById('editId').value;
+    const statusOrders = document.getElementById('editStatusOrders').value;
+
+
+    // Create an updated Barang object
+    const updatedOrder = {
+        statusOrders,
+        updatedAt: new Date(),
+    };
+
+    try {
+        // Send a PUT request to update a Barang by ID
+        const response = await fetch(`/orders/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedOrder)
+        });
+
+        if (response.ok) {
+            // Jika berhasil, tambahkan aksi tambahan di sini
+            console.log(`Pemesanan dengan ID ${id} berhasil diperbarui!`);
+            // Memperbarui daftar Barang setelah pembaruan
+            fetchOrdersList();
+            // Menutup modal edit
+            $('#editOrderModal').modal('hide');
+        } else {
+            console.error(`Failed to update Order with ID ${id}:`, response.statusText);
+        }
+    } catch (error) {
+        console.error(`Error updating Order with ID ${id}:`, error);
+    }
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+    <title>Pelanggan Barang</title>
+    <link rel="stylesheet" href="/style/dasboarplgn.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        ul li a {
+            color: rgb(216, 216, 216);
+        }
+        /* styles.css */
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+  height: 100vh;
+        transform-origin: center center;
+        transform: scale(1);
+        overflow: hidden;
+}
+
+#nav{
+
+background-color: rgb(61, 57, 57);
+}
+.navbar-light {
+  background-color: #4CAF50;
+}
+.navbar-toggler div {
+  width: 30vh;
+  height: 3vh;
+  background-color: #ffffff; /* Ganti warna sesuai keinginan Anda */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Gaya untuk animasi toggler ketika di-hover */
+.navbar-toggler:hover div {
+  background-color: #ff8000; /* Ganti warna sesuai keinginan Anda */
+}
+
+  .navbar-brand {
+   /* Membuat elemen <a> menjadi blok untuk bisa menampilkan background-image */
+    width: 250px; /* Sesuaikan lebar dengan kebutuhan */
+    height: 50px; /* Sesuaikan tinggi dengan kebutuhan */
+    background-image: url('/fashion'); /* Ganti dengan path atau URL gambar Anda */
+    background-size: cover; /* Atur tata letak gambar */
+    background-position: center;
+   
+  }
+  .isi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2a2a2a;
+    margin: 0 auto;
+  }
+
+.navbar-nav{
+
+  margin: 0;
+  padding: 0;
+}
+.nav-item{
+  color: rgb(255, 106, 0);
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #ff9100;
+}
+.navbar-toggler1{
+ background-color: rgba(0, 0, 0, 0);
+ box-shadow: none;
+}
+/* styles.css */
+.navbar-toggler1 .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-toggler1 .navbar-toggler div {
+  width: 30px;
+  height: 3px;
+  background-color: #ff5500; /* Ganti warna sesuai keinginan */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#color{
+  color: #ff5500;
+}
+.collapse{
+  position: absolute;
+  /* atau */
+
+  overflow: hidden;
+  background-color: #2a2a2a;
+  width: 50vw;
+
+  height: 100vh;
+} 
+    </style>
+</head>
+
+<body>
+
+<nav id="nav" class="navbar ">
+    <button class="navbar-toggler1" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </span>
+    </button>
+    <div class="navbar-brand" href="#"></div>
+   
+</nav>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul id="color" class="navbar-nav ml-auto">
+        <li  class="nav-item active">
+            <a class="nav-link" href="home-pelanggan">Home</a>
+        </li>
+        <li  class="nav-item active">
+            <a class="nav-link" href="pelanggan-order">Buat Pesanan </a>
+        </li>
+        <li class="nav-item">
+            <a style="color:orange;" class="nav-link" href="pelanggan-Barang">Barang</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pelanggan-History-Pesanan">History Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login">Logout</a>
+      </li>
+    </ul>
+</div>
+
+<div class="container">
+ <!-- Display Barang List -->
+ <h4 class="mt-4">Data Barang </h4>
+
+
+ <table class="table">
+     <thead>
+         <tr>
+             <th>ID</th>
+             <th>Product Name</th>
+             <th>Brand Name</th>
+             <th>Quantity</th>
+             <th>Price</th>
+         </tr>
+     </thead>
+     <tbody id="barangListBody"></tbody>
+ </table>
+</div>
+
+
+
+<!-- Bootstrap JS (Optional, for certain features like the responsive menu toggle) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    
+        // Function to fetch and display the list of Barang
+        function fetchBarangList() {
+            fetch('/barang') // Assuming this endpoint returns the list of Barang
+                .then(response => response.json())
+                .then(barangList => {
+                    // Clear the existing table content
+                    document.getElementById('barangListBody').innerHTML = '';
+
+                    // Loop through the Barang list and append rows to the table
+                    barangList.forEach(barang => {
+                        const row = `
+                            <tr>
+                                <td>${barang.id}</td>
+                                <td>${barang.productName}</td>
+                                <td>${barang.brandName}</td>
+                                <td>${barang.quantity}</td>
+                                <td>${barang.price}</td>
+                                
+                            </tr>
+                        `;
+                        document.getElementById('barangListBody').innerHTML += row;
+                    });
+                })
+                .catch(error => console.error('Error fetching Barang list:', error));
+        }
+
+        // TODO: Implement functions to edit and delete Barang
+
+        // Fetch the initial list of Barang when the page loads
+        fetchBarangList();
+
+</script>
+</body>
+
+
+<!-- 
+</html>

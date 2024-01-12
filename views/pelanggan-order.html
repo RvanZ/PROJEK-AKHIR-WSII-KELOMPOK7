@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>Pelanggan order</title>
+    <link rel="stylesheet" href="/style/dasboarplgn.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        ul li a {
+            color: rgb(216, 216, 216);
+        }
+        /* styles.css */
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+  height: 100vh;
+        transform-origin: center center;
+        transform: scale(1);
+        overflow: hidden;
+}
+
+#nav{
+
+background-color: rgb(61, 57, 57);
+}
+.navbar-light {
+  background-color: #4CAF50;
+}
+.navbar-toggler div {
+  width: 30vh;
+  height: 3vh;
+  background-color: #ffffff; /* Ganti warna sesuai keinginan Anda */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Gaya untuk animasi toggler ketika di-hover */
+.navbar-toggler:hover div {
+  background-color: #ff8000; /* Ganti warna sesuai keinginan Anda */
+}
+
+  .navbar-brand {
+   /* Membuat elemen <a> menjadi blok untuk bisa menampilkan background-image */
+    width: 250px; /* Sesuaikan lebar dengan kebutuhan */
+    height: 50px; /* Sesuaikan tinggi dengan kebutuhan */
+    background-image: url('/fashion'); /* Ganti dengan path atau URL gambar Anda */
+    background-size: cover; /* Atur tata letak gambar */
+    background-position: center;
+   
+  }
+  .isi {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2a2a2a;
+    margin: 0 auto;
+  }
+
+.navbar-nav{
+
+  margin: 0;
+  padding: 0;
+}
+.nav-item{
+  color: rgb(255, 106, 0);
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #ff9100;
+}
+.navbar-toggler1{
+ background-color: rgba(0, 0, 0, 0);
+ box-shadow: none;
+}
+/* styles.css */
+.navbar-toggler1 .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-toggler1 .navbar-toggler div {
+  width: 30px;
+  height: 3px;
+  background-color: #ff5500; /* Ganti warna sesuai keinginan */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#color{
+  color: #ff5500;
+}
+.collapse{
+  position: absolute;
+  /* atau */
+
+  overflow: hidden;
+  background-color: #2a2a2a;
+  width: 50vw;
+
+  height: 100vh;
+} 
+    /* Style for the entire table */
+    .data-barang-Hh6 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+/* Style for the table header */
+.data-barang-WZr {
+    background-color: #f2f2f2; /* Light gray background */
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Style for table header cells */
+.frame-16-ifv th {
+    border: 1px solid #ddd; /* Border between header cells */
+    padding: 10px;
+}
+
+/* Style for table data cells */
+.frame-17-NXW td {
+    border: 1px solid #ddd; /* Border between data cells */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Optional: Style for odd/even rows to improve readability */
+.frame-17-NXW tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lighter background for even rows */
+}
+
+/* Optional: Hover effect for better user interaction */
+.frame-17-NXW tr:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+
+/* Style for better presentation (optional) */
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav" class="navbar ">
+        <button class="navbar-toggler1" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler">
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </span>
+        </button>
+        <div class="navbar-brand" href="#"></div>
+
+    </nav>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="color" class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home-pelanggan">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a style="color:orange;" class="nav-link" href="pelanggan-order">Buat Pesanan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pelanggan-Barang">Barang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pelanggan-History-Pesanan">History Order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login">Logout</a>
+          </li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+      <div id="usernameDisplay" class="mt-3"></div>
+      <!-- Display Barang List -->
+      <h4 class="mt-4">Buat Pesanan</h4>
+      <form id="orderForm">
+        <label for="nama_barang">Nama Barang:</label>
+        <select id="nama_barang" name="nama_barang"></select>
+        <label for="harga">Brand:</label>
+        <input type="text" id="brand" name="brand" placeholder="Pilih Nama Barang" readonly>
+
+        <label for="harga">Harga:</label>
+        <input type="text" id="harga" name="harga" placeholder="Pilih Nama Barang" readonly>
+
+        <label for="quantity">Total Pesanan:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Masukkan Jumlah Pesanan" min="1">
+
+        <button type="submit" id="pesanButton">Pesan</button>
+    </form>
+     </div>
+   
+
+    <!-- Bootstrap JS (Optional, for certain features like the responsive menu toggle) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <script src="scripplgn.js"></script> -->
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const username = localStorage.getItem('username');
+
+            if (username) {
+                // Menampilkan username di elemen dengan ID usernameDisplay
+                document.getElementById('usernameDisplay').innerText = 'Selamat datang, ' + username + '!';
+                console.log('Username:', username);
+            } else {
+                console.error('Username tidak tersedia');
+            }
+          }
+       )
+
+      document.addEventListener('DOMContentLoaded', function () {
+        fetch('/barang') // Ganti sesuai dengan endpoint yang sesuai
+          .then(response => response.json())
+          .then(products => {
+            const selectElement = document.getElementById('nama_barang');
+    
+            products.forEach(product => {
+              const option = document.createElement('option');
+              option.value = product.id; // Gunakan ID barang sebagai nilai opsi
+              option.textContent = product.productName; // Tampilkan nama barang
+              selectElement.appendChild(option);
+            });
+    
+            // Tambahkan event listener untuk menanggapi perubahan pada opsi
+            selectElement.addEventListener('change', function () {
+              const selectedProductId = this.value;
+              const selectedProduct = products.find(product => product.id == selectedProductId);
+    
+              // Update nilai pada input brand dan harga
+              document.getElementById('brand').value = selectedProduct.brandName;
+              document.getElementById('harga').value = selectedProduct.price;
+            });
+          })
+          .catch(error => console.error('Error fetching barang:', error));
+    
+    document.getElementById('orderForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const selectedProductId = document.getElementById('nama_barang').value;
+      const quantity = document.getElementById('quantity').value;
+
+      // Kirim permintaan ke server untuk membuat order
+      fetch('/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          orderNumber: 'ORD001',
+          salesId: selectedProductId,
+          idPelanggan: 2, // Ganti dengan ID pelanggan yang sesuai
+          totalAmount: quantity, // Sesuaikan sesuai kebutuhan
+          statusOrders: 'Diproses', // Sesuaikan sesuai kebutuhan
+        }),
+      })
+        .then(response => response.json())
+        .then(order => {
+          // Tampilkan pesan atau lakukan aksi lain jika diperlukan
+          console.log('Order berhasil dibuat:', order);
+          // Tampilkan pop-up atau alert bahwa order berhasil dipesan
+          alert('Order berhasil dipesan!');
+          
+        })
+        .catch(error => console.error('Error membuat order:', error));
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+
+    if (username) {
+      // Gunakan nilai username sesuai kebutuhan Anda, misalnya, tampilkan di elemen atau lakukan tindakan lain
+      console.log('Username:', username);
+    } else {
+      console.error('Username tidak tersedia');
+    }
+  });
+    </script>
+    
+<!-- Di halaman pelanggan-order.html, Anda dapat menggunakan script berikut untuk mendapatkan nilai username dari local storage -->
+
+</body>
+<!-- 
+</html>
+
+
+
+  
+<!-- 
+    <div class="isi">
+      <table class="data-barang-Hh6" id="20:455">
+        <thead>
+            <tr>
+                <th colspan="5" class="data-barang-WZr" id="20:488">Data Barang</th>
+            </tr>
+            <tr class="frame-16-ifv" id="88:209">
+                <th class="brand-Qoe" id="88:211">Brand</th>
+                <th class="nama-uEc" id="88:210">Nama</th>
+                <th class="harga-pcU" id="88:212">Harga</th>
+                <th class="stok-wwz" id="88:213">Stok</th>
+                <th class="action-TvL" id="88:214">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="frame-17-NXW" id="88:217">
+                <th class="auto-group-9zxn-5wi" id="ULnvWAfsvpJBCsuUnf9zXn">
+                    <p class="brand-bfA" id="88:218">Brand</p>
+                </th>
+                <th class="auto-group-9zxn-5wi" id="ULnvWAfsvpJBCsuUnf9zXn">
+                    <p class="nama-KbA" id="88:219">Nama</p>
+                </th>
+                <th class="auto-group-9zxn-5wi" id="ULnvWAfsvpJBCsuUnf9zXn">
+                    <p class="harga-42x" id="88:220">Harga</p>
+                </th>
+                <th class="auto-group-9zxn-5wi" id="ULnvWAfsvpJBCsuUnf9zXn">
+                    <p class="stok-9q6" id="88:221">Stok</p>
+                </th>
+                <th class="auto-group-9zxn-5wi" id="ULnvWAfsvpJBCsuUnf9zXn">
+                    <button class="group-16-g4L" id="88:223">Pesan</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+      </div> -->
+
+<!-- 
+      <script>
+    
+        let pesananId = 0;
+    
+            function tampilkanModal(id, productName, quantity) {
+                pesananId = id;
+                document.getElementById('pesanModalLabel').innerText = `Pesan ${productName}`;
+                document.getElementById('jumlahPesan').max = quantity;
+    
+                $('#pesanModal').modal('show');
+            }
+    
+            async function simpanPesan() {
+            const jumlahPesan = parseInt(document.getElementById('jumlahPesan').value, 10);
+    
+            if (jumlahPesan > 0 && jumlahPesan <= document.getElementById('jumlahPesan').max) {
+                try {
+                    const response = await fetch('/simpan-pesanan', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({  
+                            id: pesananId,
+                            jumlahPesan: jumlahPesan,
+                        }),
+                    });
+    
+                    if (response.ok) {
+                        const stokBaru = document.getElementById(`stokBarang-${pesananId}`).innerText - jumlahPesan;
+                        document.getElementById(`stokBarang-${pesananId}`).innerText = stokBaru;
+    
+                        $('#pesanModal').modal('hide');
+    
+                        console.log(`Pesan ${jumlahPesan} ${document.getElementById(`brandBarang-${pesananId}`).innerText} ${document.getElementById(`productName-${pesananId}`).innerText}`);
+                    } else {
+                        console.error('Gagal menyimpan pesanan:', response.statusText);
+                        alert('Gagal menyimpan pesanan. Silakan coba lagi.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan. Silakan coba lagi.');
+                }
+            } else {
+                alert('Jumlah pesanan tidak valid atau stok tidak mencukupi.');
+            }
+        }
+    
+          // Function to fetch and display the list of Barang
+          function fetchBarangList() {
+              fetch('/barang') // Assuming this endpoint returns the list of Barang
+                  .then(response => response.json())
+                  .then(barangList => {
+                      // Clear the existing table content
+                      document.getElementById('barangListBody').innerHTML = '';
+    
+                      // Loop through the Barang list and append rows to the table
+                      barangList.forEach(barang => {
+                          const row = `
+                              <tr>
+                                  <td id="brandBarang-${barang.id}">${barang.brandName}</td>
+                                  <td id="productName-${barang.id}">${barang.productName}</td>
+                                  <td>${barang.price}</td>
+                                  <td id="stokBarang-${barang.id}">${barang.quantity}</td>
+                                  <td>
+                                        Add edit and delete buttons with appropriate onclick actions
+                                        <button class="btn btn-success" onclick="tampilkanModal(${barang.id}, '${barang.productName}', ${barang.quantity})">Pesan</button>
+                                    </td>
+                  
+                              </tr>
+                          `;
+                          document.getElementById('barangListBody').innerHTML += row;
+                      });
+                  })
+                  .catch(error => console.error('Error fetching Barang list:', error));
+          }
+    
+          // TODO: Implement functions to edit and delete Barang
+    
+          // Fetch the initial list of Barang when the page loads
+          fetchBarangList();
+    
+          
+    
+    </script> -->

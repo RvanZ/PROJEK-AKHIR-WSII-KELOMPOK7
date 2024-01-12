@@ -1,0 +1,284 @@
+    <!-- views/admin-login.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Pelanggan</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css"> <!-- Add your custom styles here -->
+    </head>
+    <body>
+        <style>
+
+            /* Reset some default styles */
+            body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Container styles */
+.login-Eov {
+
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.left-content-hBi {
+  background-color: blue;
+  flex: 1;
+  height: 100vh;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.register-link {
+  cursor: pointer;
+  color:rgb(0, 0, 209);
+  text-decoration: underline;
+  margin: 0 auto;
+}
+.right-content-fJt {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+.fashionhub-emA {
+  font-size: 24px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.platform-e-commerce-fashion-M9n {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.frame-3-GXe {
+  background-color: rgb(96, 120, 255);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Title styles */
+.title-msi {
+  text-align: center;
+  margin-bottom: 20px;
+ 
+}
+
+.login-uyv {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.welcome-r8U {
+  font-size: 18px;
+  color: #777;
+}
+
+.forgot-password-yit {
+  color: #4CAF50;
+  cursor: pointer;
+}
+
+/* Input styles */
+.password-xKv,
+.email-yuE {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+.button-6Yc {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .login-Eov {
+      flex-direction: column-reverse;
+      height: auto;
+  }
+
+  .left-content-hBi,
+  .right-content-fJt {
+      flex: none;
+      width: 100%;
+  }
+}
+
+
+        </style>
+
+        <script>
+         
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    if (error === '1') {
+      alert('Username atau password salah');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Kirim permintaan ke server untuk otentikasi
+      fetch('/home-pelanggan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      })
+        .then(response => response.json())
+        .then(userData => {
+          // Simpan ID pelanggan ke dalam localStorage setelah login berhasil
+          localStorage.setItem('idPelanggan', userData.idPelanggan);
+          alert('Username:', userData.idPelanggan);
+
+          // Pindahkan ke halaman dasorad.html
+          window.location.href = '/home-pelanggan';
+          
+        })
+        .catch(error => console.error('Error during login:', error));
+    });
+  });
+
+  //           document.addEventListener('DOMContentLoaded', function () {
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   const error = urlParams.get('error');
+
+  //   if (error === '1') {
+  //     alert('Username atau password salah');
+  //   }
+
+  //   document.getElementById('loginForm').addEventListener('submit', function (event) {
+  //     event.preventDefault();
+
+  //     const username = document.getElementById('username').value;
+  //     const password = document.getElementById('password').value;
+
+  //     // Kirim permintaan ke server untuk otentikasi
+  //     fetch('/auth/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         username,
+  //         password,
+  //       }),
+  //     })
+  //       .then(response => response.json())
+  //       .then(userData => {
+  //         // Simpan ID pelanggan ke dalam variabel setelah login berhasil
+  //         const idPelanggan = userData.idPelanggan;
+
+  //         // Lakukan tindakan selanjutnya, misalnya, pindahkan ke halaman lain
+  //         // atau lakukan sesuatu dengan ID pelanggan yang disimpan
+  //         console.log('ID Pelanggan:', idPelanggan);
+  //       })
+  //       .catch(error => console.error('Error during login:', error));
+  //   });
+  // });
+
+</script>
+
+<!-- ... (HTML content) ... -->
+
+<!-- Di halaman pelanggan-order.html, Anda dapat menggunakan script berikut untuk mendapatkan nilai username dari local storage -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+
+    if (username) {
+      // Gunakan nilai username sesuai kebutuhan Anda, misalnya, tampilkan di elemen atau lakukan tindakan lain
+      console.log('Username:', username);
+      alert('Username:', username);
+    } else {
+      console.error('Username tidak tersedia');
+    }
+  });
+        </script>
+
+    <!-- <div class="container mt-5">
+        <div class="col-md-6 offset-md-3">
+            <h2>Login</h2>
+            <form id="pelangganLoginForm" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div> -->
+
+    <form id="pelangganLoginForm" method="post">
+        <div class="login-Eov" id="3:64">
+            <div class="left-content-hBi" id="3:65">
+                <div class="frame-4-oEk" id="3:71">
+                    <div class="group-1-Wur" id="3:72">
+                        <p class="fashionhub-emA" id="3:73">FashionHub</p>
+                        <p class="platform-e-commerce-fashion-M9n" id="3:74">Platform E-Commerce Fashion</p>
+                        <!-- <div class="frame-3-GXe" id="3:75">Read More</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="right-content-fJt" id="3:77">
+                <div class="title-msi" +id="3:78">
+                    <p class="login-uyv" id="3:79">Login</p>
+                    <p class="welcome-r8U" id="3:80"> </p>
+                </div>
+                <input  placeholder="Masukkan username" class="email-yuE" type="text"  id="username" name="username" required/>
+                <input placeholder="Masukkan password"class="password-xKv" type="password" id="password" name="password" required/>
+                <button type="submit" class="button-6Yc">Login</button>
+                <p class="register-link" id="register-link" ><a href="register">Register</a></p>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/pelanggan-login.js"></script> <!-- Add your admin login script here -->
+
+    </body>
+    </html>

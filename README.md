@@ -2,8 +2,7 @@
 <h2> Mahasiswa UTY Sistem Informasi </h2>
 <h3> 👨🏻‍💻 About Project </h3>
 
-FashionHub adalah toko fashion daring yang menyediakan pengalaman belanja online yang cepat dan mudah. Dalam sistem ini, penjual dan pembeli dapat melakukan transaksi tanpa kesulitan, dengan fokus pada pemesanan produk fashion berkualitas. FashionHub menawarkan kenyamanan dalam proses pemesanan dan pengiriman yang efisien. Nikmati gaya terkini tanpa hambatan, hanya di FashionHub.
-SQL dipilih karena kemudahan penggunaan, keamanan, fleksibilitas dalam manipulasi data, kemampuan kinerja tinggi, standar industri yang luas, manajemen transaksi yang handal, dan skalabilitas baik untuk data maupun pengguna. Ini menjadikan SQL bahasa yang powerful dan serbaguna dalam manajemen basis data relasional.
+<p align="justify">FashionHub adalah toko fashion daring yang menyediakan pengalaman belanja online yang cepat dan mudah. Dalam sistem ini, penjual dan pembeli dapat melakukan transaksi tanpa kesulitan, dengan fokus pada pemesanan produk fashion berkualitas. FashionHub menawarkan kenyamanan dalam proses pemesanan dan pengiriman yang efisien. Nikmati gaya terkini tanpa hambatan, hanya di FashionHub.SQL dipilih karena kemudahan penggunaan, keamanan, fleksibilitas dalam manipulasi data, kemampuan kinerja tinggi, standar industri yang luas, manajemen transaksi yang handal, dan skalabilitas baik untuk data maupun pengguna. Ini menjadikan SQL bahasa yang powerful dan serbaguna dalam manajemen basis data relasional.</p>
 
 <h3>🛠 Teknologi</h3>
 

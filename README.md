@@ -6,11 +6,11 @@
 
 <h3>🛠 Teknologi</h3>
 
-- 💻 &nbsp; Full-Stack | HTML | CSS | JavaScript | Bootstrap 
+- 💻 &nbsp; HTML | CSS | JavaScript | Bootstrap 
 - 🛢 &nbsp; MySQL | Postman
 - 🔧 &nbsp; Visual Studio code  | Git
 - 🖥 &nbsp; Figma
 
-Presentasi with kelompok 7.pptx
+🙏 File presentasi kelompok 7.pptx
 
 ⭐️ From [kelompok7]

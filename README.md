@@ -7,7 +7,7 @@
 <h3>🛠 Teknologi</h3>
 
 - 💻 &nbsp; HTML | CSS | JavaScript | Bootstrap 
-- 🛢 &nbsp; MySQL | Postman
+- 🛢 &nbsp; MySQL | Postman | Express
 - 🔧 &nbsp; Visual Studio code  | Git
 - 🖥 &nbsp; Figma
 

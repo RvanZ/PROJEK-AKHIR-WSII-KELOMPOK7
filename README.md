@@ -1,7 +1,9 @@
 # FASHIONHUB
 ## KELOMPOK 7
 
-![Kelompok 7 README](https://github.com/RvanZ/project-akhir/assets/72004690/80651021-5db4-4be9-88a7-eb4ea86bd29d)
+
+![Kelompok 7 README](https://github.com/RvanZ/project-akhir/assets/72004690/747446ea-960a-45e0-a4c0-bb2a37b05d88)
+
 
 
 

@@ -32,8 +32,9 @@ Nama project ini adalah Fashion Hub, sebuah platform yang bertujuan  menyediakan
 1. **Fitur Login**: Fitur ini memungkinkan pengguna untuk masuk ke dalam platform dengan menggunakan kredensial yang telah mereka daftarkan sebelumnya.
 2. **Fitur Register**: Fitur ini memungkinkan pengguna untuk membuat akun baru di dalam platform. Pengguna dapat mengisi informasi pribadi, seperti nama, alamat email, dan kata sandi untuk membuat akun mereka
 3. **Fitur Tambah Pemesanan**: Fitur ini memungkinkan pengguna untuk menambahkan pemesanan baru dengan mudah. Pengguna dapat memilih barang atau layanan yang mereka inginkan, menentukan jumlah atau spesifikasi, dan menyelesaikan proses pemesanan dengan mengonfirmasi rincian pembelian
-4. **Fitur Edit Barang**: Fitur ini memberikan kemampuan kepada pengguna untuk mengedit informasi atau detail barang yang telah mereka tambahkan ke dalam sistem
-5. **Fitur Lihat Pemesanan**:  Fitur ini memungkinkan pengguna untuk melihat riwayat pemesanan mereka. Pengguna dapat mengakses daftar pemesanan sebelumnya, melihat rincian transaksi, dan memantau status pengiriman atau pemrosesan pesanan.
+4. **Fitur Lihat Pemesanan**:  Fitur ini memungkinkan pengguna untuk melihat riwayat pemesanan mereka. Pengguna dapat mengakses daftar pemesanan sebelumnya, melihat rincian transaksi, dan memantau status pengiriman atau pemrosesan pesanan.
+5. **Fitur Edit Barang**: Fitur ini memberikan kemampuan kepada admin untuk mengedit informasi atau detail barang yang telah mereka tambahkan ke dalam sistem
+6. **Fitur Ubah Status**: Fitur ini memberikan kemampuan kepada admin untuk mengubah status pemesanan produk yang telah mereka tambahkan ke dalam sistem.
 
 Terimakasih👋
 -----------

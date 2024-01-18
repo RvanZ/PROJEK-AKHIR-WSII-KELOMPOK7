@@ -13,8 +13,8 @@ Nama project ini adalah Fashion Hub, sebuah platform yang bertujuan  menyediakan
 
 ### 👨🏻‍💻Anggota Kelompok:
 ----------------
-- 5210311051 ADE MAULANA HIDAYAH (Link Github)
-- 5210311068 FERNANDO ALFREDO SIMANULLANG (Link Github)
+- 5210311051 ADE MAULANA HIDAYAH (https://github.com/hackerjalanan)
+- 5210311068 FERNANDO ALFREDO SIMANULLANG (https://github.com/FernandoSimanullang)
 - 5210311078 IRFAN ZAIN AZHAR (https://github.com/RvanZ)
 - 5210311119 FRANSISKUS ASISI (Link Github)
 

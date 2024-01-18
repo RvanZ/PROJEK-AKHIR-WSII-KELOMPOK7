@@ -1,7 +1,9 @@
 # FASHIONHUB
 ## KELOMPOK 7
 
-![Template Github README (1)](https://github.com/Dimaspermana293/PROJEK-AKHIR-WSII-KELOMPOK10/assets/97396687/53b8d7e7-38c1-4be6-aefd-7504628fdf79)
+![Kelompok 7 README](https://github.com/RvanZ/project-akhir/assets/72004690/80651021-5db4-4be9-88a7-eb4ea86bd29d)
+
+
 
 ### 🌐Tentang Project:
 ----------------
